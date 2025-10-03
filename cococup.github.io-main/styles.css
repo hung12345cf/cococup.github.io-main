@@ -11,17 +11,17 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes full viewport height */
+    min-height: 100vh;
 }
 
 header {
-    background: #6B9B4B; /* Solid green background */
+    background: #6B9B4B;
     color: white;
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -38,7 +38,8 @@ header {
     height: 50px;
     background: url('image/logo.jpg') no-repeat center;
     background-size: contain;
-    text-indent: -9999px; /* Hide text */
+    
+    text-indent: -9999px;
 }
 
 .search-bar {
@@ -53,7 +54,7 @@ header {
     width: 100%;
     padding: 12px 15px;
     border: none;
-    border-radius: 25px 0 0 25px; /* Rounded left side */
+    border-radius: 25px 0 0 25px;
     font-size: 1em;
     color: #333;
     outline: none;
@@ -61,44 +62,38 @@ header {
 }
 
 .search-bar input:focus {
-    box-shadow: 0 0 5px  rgba(34, 139, 34, 0.5); /* Green glow on focus */
+    box-shadow: 0 0 5px rgba(34, 139, 34, 0.5);
 }
 
 .search-bar button {
     padding: 12px 20px;
-    background: #ffffff; /* Orange background */
+    background: #fffefd;
     color: white;
     border: none;
-    border-radius: 0 25px 25px 0; /* Rounded right side */
+    border-radius: 0 25px 25px 0;
     cursor: pointer;
     font-size: 0.8em;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.3s ease, transform 0.2s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 .search-bar button:hover {
-    background: #ffffff; /* Darker orange on hover */
-    transform: scale(1.05); /* Slight scale effect */
-}
-
-.search-bar button::after {
-   
-    font-size: 1.2em;
+    background: #6B9B4B;
+    transform: scale(1.05);
 }
 
 nav {
     display: flex;
-    justify-content: center; /* căn giữa các mục menu */
+    justify-content: center;
     align-items: center;
-    position: relative; /* để hotline có thể đặt tuyệt đối bên phải */
+    position: relative;
     width: 100%;
+    margin-top: -30px; /* Nâng nav lên 5px từ vị trí hiện tại */
 }
 
-nav ul {
+nav ul.nav-menu {
     display: flex;
     list-style: none;
     gap: 20px;
@@ -106,7 +101,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a {
+nav ul.nav-menu li a {
     color: white;
     text-decoration: none;
     font-size: 1em;
@@ -114,16 +109,74 @@ nav ul li a {
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #ffffff;
+nav ul.nav-menu li a:hover {
+    color: #f9f6f5;
 }
 
 .hotline {
-    position: absolute;   /* cho hotline dính vào bên phải */
+    position: absolute;
     right: 20px;
     font-size: 1em;
     white-space: nowrap;
 }
+
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 0; /* Đặt lại margin-top khi ở màn hình nhỏ để tránh lệch */
+    }
+    .hamburger {
+        display: block;
+    }
+    nav ul.nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #6B9B4B;
+        padding: 10px 0;
+    }
+    nav ul.nav-menu.active {
+        display: flex;
+    }
+    nav ul.nav-menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+    nav ul.nav-menu li a {
+        padding: 10px;
+        display: block;
+    }
+    .hotline {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
 .banner {
     position: relative;
     text-align: center;
@@ -149,7 +202,7 @@ nav ul li a:hover {
     color: white;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
     padding: 30px 40px;
-    background: rgba(34, 139, 34, 0.95);
+    background: rgba(107, 155, 75, 0.95);
     border-radius: 10px;
     max-width: 90%;
     text-align: center;
@@ -161,7 +214,7 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    flex: 1 0 auto; /* Allow this section to grow but not shrink past content */
+    flex: 1 0 auto;
 }
 
 h1 {
@@ -218,28 +271,21 @@ h2 {
     margin: 10px 0;
 }
 
-.add-to-cart {
+.buy-now-btn {
+    display: inline-block;
     background: #6B9B4B;
     color: white;
-    border: none;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
-    width: 100%;
-    max-width: 200px;
-    height: 40px;
-    line-height: 20px;
-    margin: 10px auto 0;
-    display: block;
-    box-sizing: border-box;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 1em;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
-.add-to-cart:hover {
-    background: #6B9B4B;
+.buy-now-btn:hover {
+    background: #1A5A2A;
 }
 
 .read-more {
@@ -316,11 +362,11 @@ button[type="submit"]:hover {
 }
 
 footer {
-    background: #333;
+    background: #6B9B4B;
     color: white;
     padding: 40px 0;
     width: 100%;
-    flex-shrink: 0; /* Prevent footer from shrinking */
+    flex-shrink: 0;
 }
 
 .footer-container {
@@ -333,7 +379,7 @@ footer {
 }
 
 .contact {
-    text-align: center;
+    text-align: left;
 }
 
 .social {
@@ -341,9 +387,18 @@ footer {
 }
 
 .social a {
-    color: #6B9B4B;
+    color: #fffefd;
     margin: 0 10px;
     text-decoration: none;
+}
+
+.social a:hover {
+    color: #6B9B4B;
+}
+
+.social i {
+    font-size: 1.2em;
+    vertical-align: middle;
 }
 
 .copyright {
@@ -403,78 +458,6 @@ footer {
     color: #228B22;
 }
 
-@media (max-width: 1200px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .search-bar {
-        margin: 10px 0;
-        width: 100%;
-    }
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-    nav li a {
-        padding: 5px 0;
-    }
-    .hotline {
-        padding-left: 0;
-        margin-top: 10px;
-    }
-    .banner-content h1 {
-        font-size: 1.5em;
-    }
-    .banner-content p {
-        font-size: 1em;
-    }
-    .banner img {
-        height: 300px;
-    }
-    .product-item img, .news-item img {
-        height: 200px;
-    }
-    #mua-hang, #contact-form {
-        padding: 15px;
-    }
-    .about-content {
-        padding: 15px;
-    }
-}
-
-.buy-now-btn {
-    display: inline-block;
-    background: #6B9B4B;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-.buy-now-btn:hover {
-    background: #1A5A2A;
-}
-/* 🎯 Căn chỉnh riêng phần Mua Hàng Nhanh */
 #mua-hang {
     max-width: 1200px;
     margin: 40px auto;
@@ -506,13 +489,6 @@ footer {
     line-height: 1.5;
 }
 
-.mua-hang-img {
-    margin-top: 15px;
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
 .mua-hang-form {
     flex: 1;
     background: #fff;
@@ -527,9 +503,52 @@ footer {
     color: #6B9B4B;
 }
 
-/* Responsive cho mobile */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .mua-hang-container {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+    }
+    nav {
+        justify-content: flex-start;
+    }
+    .banner-content h1 {
+        font-size: 1.5em;
+    }
+    .banner-content p {
+        font-size: 1em;
+    }
+    .banner img {
+        height: 300px;
+    }
+    .product-item img, .news-item img {
+        height: 200px;
+    }
+    #mua-hang, #contact-form {
+        padding: 15px;
+    }
+    .about-content {
+        padding: 15px;
     }
 }
