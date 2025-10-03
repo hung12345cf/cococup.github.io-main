@@ -38,10 +38,9 @@ header {
     height: 50px;
     background: url('image/logo.jpg') no-repeat center;
     background-size: contain;
-    margin-left: -170px;
+    margin-right: auto;
     text-indent: -9999px;
 }
-
 
 .search-bar {
     flex: 1;
@@ -91,7 +90,7 @@ nav {
     align-items: center;
     position: relative;
     width: 100%;
-    margin-top: -30px; /* Nâng nav lên 5px từ vị trí hiện tại */
+    margin-top: -30px;
 }
 
 nav ul.nav-menu {
@@ -129,7 +128,6 @@ nav ul.nav-menu li a:hover {
     padding: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
     .header-container {
         flex-direction: column;
@@ -145,7 +143,7 @@ nav ul.nav-menu li a:hover {
     nav {
         width: 100%;
         justify-content: flex-start;
-        margin-top: 0; /* Đặt lại margin-top khi ở màn hình nhỏ để tránh lệch */
+        margin-top: 0;
     }
     .hamburger {
         display: block;
@@ -187,7 +185,7 @@ nav ul.nav-menu li a:hover {
 }
 
 .banner img {
-    width: 100%;
+    width: 70%;
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
@@ -264,6 +262,20 @@ h2 {
     margin-bottom: 10px;
 }
 
+.person-image {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+.person-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 .price {
     color: #6B9B4B;
     font-weight: bold;
@@ -286,11 +298,11 @@ h2 {
 }
 
 .buy-now-btn:hover {
-    background: #1A5A2A;
+    background: #6B9B4B;
 }
 
 .read-more {
-    color: #228B22;
+    color: #6B9B4B;
     text-decoration: none;
     font-weight: bold;
     display: block;
@@ -300,7 +312,7 @@ h2 {
 .view-all {
     display: block;
     margin: 20px auto;
-    background: #228B22;
+    background: #6B9B4B;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -314,12 +326,9 @@ h2 {
 }
 
 #mua-hang, #contact-form {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 form {
@@ -340,7 +349,7 @@ input, select, textarea {
 }
 
 button[type="submit"] {
-    background: #228B22;
+    background: #6B9B4B;
     color: white;
     padding: 10px;
     border: none;
@@ -350,7 +359,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #1A5A2A;
+    background: #6B9B4B;
 }
 
 .contact-info {
@@ -456,7 +465,7 @@ footer {
 }
 
 .about-content strong {
-    color: #228B22;
+    color: #6B9B4B;
 }
 
 #mua-hang {
@@ -468,7 +477,7 @@ footer {
 .mua-hang-container {
     display: flex;
     gap: 40px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .mua-hang-info {
@@ -477,17 +486,9 @@ footer {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.mua-hang-info h2 {
-    color: #6B9B4B;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.mua-hang-info p {
-    margin-bottom: 10px;
-    line-height: 1.5;
+    display: flex;
+    align-items: stretch;
+    min-height: 400px;
 }
 
 .mua-hang-form {
@@ -496,6 +497,7 @@ footer {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 400px;
 }
 
 .mua-hang-form h2 {
@@ -516,6 +518,9 @@ footer {
     }
     .mua-hang-container {
         flex-direction: column;
+    }
+    .mua-hang-info, .mua-hang-form {
+        min-height: auto;
     }
 }
 
