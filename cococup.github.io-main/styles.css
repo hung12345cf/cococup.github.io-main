@@ -38,7 +38,7 @@ header {
     height: 50px;
     background: url('image/logo.jpg') no-repeat center;
     background-size: contain;
-    
+    margin-left: -170px;
     text-indent: -9999px;
 }
 
