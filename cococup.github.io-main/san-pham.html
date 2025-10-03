@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lá Dừa Eco</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Lá Dừa Eco</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm...">
+                <button>🔍</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="san-pham.html">Sản phẩm</a></li>
+                <li><a href="tin-tuc.html">Tin tức</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+                <li><a href="about-us.html">About us</a></li>
+            </ul>
+            <span class="hotline">Hotline: 1900 6750</span>
+        </nav>
+    </header>
+
+    <section class="product-page">
+        <h1>Sản Phẩm</h1>
+        <div class="product-grid">
+            <div class="product-item">
+                <h3>Ly Lá Dừa Size S</h3>
+                <p>Ly nhỏ gọn, lý tưởng cho cà phê take-away. Thủ công tinh xảo, giữ nhiệt tốt.</p>
+                <span class="price">50.000đ</span>
+                <button class="buy-now-btn" data-product="Ly Lá Dừa Size S - 50.000đ">Mua Ngay</button>
+            </div>
+            <div class="product-item">
+                <h3>Ly Lá Dừa Size L</h3>
+                <p>Thiết kế độc đáo với họa tiết thiên nhiên, bền vững và phong cách.</p>
+                <span class="price">70.000đ</span>
+                <button class="buy-now-btn" data-product="Ly Lá Dừa Size L - 70.000đ">Mua Ngay</button>
+            </div>
+            <div class="product-item">
+                <h3>Ly Lá Dừa Size XL</h3>
+                <p>Ly lớn, phù hợp cho nước uống gia đình, thân thiện môi trường.</p>
+                <span class="price">100.000đ</span>
+                <button class="buy-now-btn" data-product="Ly Lá Dừa Size XL - 100.000đ">Mua Ngay</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact">
+                <h2>Liên Hệ</h2>
+                <p>Trường Đại học FPT Cần Thơ, 600 Đường Nguyễn Văn Cừ, Cần Thơ</p>
+                <p>Hotline: 1900 6750</p>
+            </div>
+            <div class="social">
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="copyright">© 2025 Lá Dừa Eco</div>
+    </footer>
+
+    <div id="modal-thong-bao" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mua Hàng Thành Công!</h2>
+            <p>Đơn hàng của bạn đã được ghi nhận. Chúng tôi sẽ liên hệ sớm!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

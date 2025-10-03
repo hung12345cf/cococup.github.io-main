@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lá Dừa Eco - Liên Hệ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Lá Dừa Eco</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm sản phẩm bạn mong muốn">
+                <button>🔍</button>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="san-pham.html">Sản phẩm</a></li>
+                <li><a href="tin-tuc.html">Tin tức</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+                <li><a href="about-us.html">About us</a></li>
+            </ul>
+            <div class="hotline">Hotline: 1900 6750</div>
+        </nav>
+    </header>
+
+    <section class="contact-page">
+        <h1>Liên Hệ</h1>
+        <div class="contact-info">
+            <p><strong>Địa chỉ:</strong> Trường Đại học FPT Cần Thơ, 600 Đường Nguyễn Văn Cừ, Kênh 5, An Phú, Ninh Kiều, Cần Thơ</p>
+            <p><strong>Hotline:</strong> 1900 6750</p>
+            <p><strong>Email:</strong> info@laduaeco.vn</p>
+            <p><strong>Giờ làm việc:</strong> 9:00 - 22:00 (T2-CN)</p>
+        </div>
+        <div id="map" style="height: 400px; width: 100%; margin: 20px 0;"></div>
+        <form id="contact-form">
+            <label for="name">Họ và Tên:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Lời Nhắn:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Gửi Liên Hệ</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact">
+                <h3>Liên Hệ</h3>
+                <p>Trường Đại học FPT Cần Thơ, 600 Đường Nguyễn Văn Cừ, Cần Thơ</p>
+                <p>Hotline: 1900 6750</p>
+            </div>
+            <div class="social">
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Lá Dừa Eco</p>
+    </footer>
+
+    <div id="modal-thong-bao" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gửi Liên Hệ Thành Công!</h2>
+            <p>Cảm ơn bạn. Chúng tôi sẽ phản hồi sớm nhất!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
